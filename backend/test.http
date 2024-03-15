@@ -15,12 +15,12 @@ Content-Type: application/json
 
 ####
 
-GET http://localhost:3030/getAuthor/65f43afc2385f5ae469ef3ef
+GET http://localhost:3030/getAuthor/65f43b932385f5ae469ef3f8
 
 
 ####
 
-PATCH http://localhost:3030/updateAuthor/65f43afc2385f5ae469ef3ef
+PATCH http://localhost:3030/updateAuthor/65f43b932385f5ae469ef3f8
 Content-Type: application/json
 
 {
@@ -29,4 +29,4 @@ Content-Type: application/json
 
 ####
 
-DELETE http://localhost:3030/deleteAuthor/65f43afc2385f5ae469ef3ef
+DELETE http://localhost:3030/deleteAuthor/65f43b932385f5ae469ef3f8
