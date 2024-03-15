@@ -1,0 +1,32 @@
+GET http://localhost:3030/getAuthors
+
+####
+
+POST http://localhost:3030/createAuthor
+Content-Type: application/json
+
+{
+  "name": "Barbara",
+  "surname": "Cicale",
+  "email": "cica@mail",
+  "birthday": "15/9/06",
+  "avatar": "picz.png"
+}
+
+####
+
+GET http://localhost:3030/getAuthor/65f43afc2385f5ae469ef3ef
+
+
+####
+
+PATCH http://localhost:3030/updateAuthor/65f43afc2385f5ae469ef3ef
+Content-Type: application/json
+
+{
+  "name": "Barbie"
+}
+
+####
+
+DELETE http://localhost:3030/deleteAuthor/65f43afc2385f5ae469ef3ef
