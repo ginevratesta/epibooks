@@ -11,9 +11,13 @@ app.use(cors());
 
 const authorsRoute = require("./routes/authors");
 
+const blogsRoute = require("./routes/blogs");
+
 app.use(express.json());
 
 app.use("", authorsRoute);
+
+app.use("", blogsRoute);
 
 mongoose.connect(process.env.MONGODB_URL);
 

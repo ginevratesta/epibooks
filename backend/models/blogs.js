@@ -18,7 +18,7 @@ const BlogsSchema = new mongoose.Schema(
     },
 
     readTime: {
-      type: Number,
+      type: String,
       required: true,
     },
 

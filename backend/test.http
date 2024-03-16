@@ -30,3 +30,17 @@ Content-Type: application/json
 ####
 
 DELETE http://localhost:3030/deleteAuthor/65f43b932385f5ae469ef3f8
+
+####
+
+POST http://localhost:3030/createBlog
+Content-Type: application/json
+
+{
+  "category": "Romance",
+  "title": "Wow new blog",
+  "cover": "prettypic.jpeg",
+  "readTime": "35 min",
+  "author": "Johnny",
+  "content": "blah blah blah"
+}
