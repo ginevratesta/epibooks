@@ -40,7 +40,7 @@ Content-Type: application/json
   "category": "Romance",
   "title": "Wow new blog",
   "cover": "prettypic.jpeg",
-  "readTime": "35 min",
+  "readTime": 5,
   "author": "Johnny",
   "content": "blah blah blah"
 }
