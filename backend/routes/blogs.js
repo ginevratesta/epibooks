@@ -16,11 +16,12 @@ router.get("/getblogs", async (req, res) => {
 
 router.post("/createBlog", async (req, res) => {
   const newBlog = new blogModel({
-    name: req.body.name,
-    surname: req.body.surname,
-    email: req.body.email,
-    birthday: req.body.birthday,
-    avatar: req.body.avatar,
+    category: req.body.category,
+    title: req.body.title,
+    cover: req.body.cover,
+    readTime: req.body.readTime,
+    author: req.body.author,
+    content: req.body.content
   });
 
   try {
