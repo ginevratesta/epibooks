@@ -1,9 +1,9 @@
-import Authors from "./Components/Authors";
+import Blogs from "./Components/Blogs";
 
 const App = () => {
   return(
     <>
-    <Authors />
+    <Blogs />
     </>
   )
 };
