@@ -6,7 +6,6 @@ router.get("/getblogs", blogsController.getBlogs );
 
 router.post("/createBlog", blogsController.postBlog);
 
-
 router.get("/getBlog/:id", blogsController.getBlogById);
 
 router.patch("/updateBlog/:id", blogsController.patchBlog);
