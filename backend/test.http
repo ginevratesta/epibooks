@@ -38,7 +38,7 @@ Content-Type: application/json
 
 {
   "category": "Romance",
-  "title": "Wow new blog",
+  "title": "super wow",
   "cover": "prettypic.jpeg",
   "readTime": 5,
   "author": "Johnny",
