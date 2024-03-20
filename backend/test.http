@@ -37,10 +37,10 @@ POST http://localhost:3030/createBlog
 Content-Type: application/json
 
 {
-  "category": "Romance",
-  "title": "super wow",
-  "cover": "prettypic.jpeg",
-  "readTime": 5,
-  "author": "Johnny",
-  "content": "blah blah blah"
+  "category": "Technology",
+  "title": "New Amazing Toaster",
+  "cover": "coolpic.jpeg",
+  "readTime": 7,
+  "author": "Morty Mer",
+  "content": "New hyper smart toaster for you own home"
 }
