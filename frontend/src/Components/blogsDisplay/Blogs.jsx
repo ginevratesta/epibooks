@@ -31,7 +31,7 @@ const Blogs = () => {
                 <Card.Text className="text-truncate">
                   {blog.content}
                 </Card.Text>
-                <p>Read time: {blog.readTime}</p>
+                <p>Read time: {blog.readTime} mins</p>
                 <div className="d-flex justify-content-around">
                 <Card.Img src={blog.author.cover}/>
                 <Card.Text>
