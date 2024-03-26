@@ -1,8 +1,8 @@
-const blogModel = require("../models/blogs");
+const BlogModel = require("../models/blogs");
 
 exports.getBlogs = async (req, res) => {
   try {
-    const blogs = await blogModel.find();
+    const blogs = await BlogModel.find();
     res.status(200).send(blogs);
   } catch (e) {
     res.status(500).send({
@@ -13,7 +13,7 @@ exports.getBlogs = async (req, res) => {
 };
 
 exports.postBlog = async (req, res) => {
-  const newBlog = new blogModel({
+  const newBlog = new BlogModel({
     category: req.body.category,
     title: req.body.title,
     cover: req.body.cover,
@@ -39,7 +39,7 @@ exports.postBlog = async (req, res) => {
 exports.getBlogById = async (req, res) => {
   const { id } = req.params;
   try {
-    const blog = await blogModel.findById(id);
+    const blog = await BlogModel.findById(id);
 
     if (!blog) {
       return res.status(404).send({
@@ -60,7 +60,7 @@ exports.patchBlog = async (req, res) => {
   const { id } = req.params;
 
   try {
-    const blog = await blogModel.findById(id);
+    const blog = await BlogModel.findById(id);
 
     if (!blog) {
       return res.status(404).send({
@@ -72,7 +72,7 @@ exports.patchBlog = async (req, res) => {
     const updatedData = req.body;
     const options = { new: true };
 
-    const results = await blogModel.findByIdAndUpdate(id, updatedData, options);
+    const results = await BlogModel.findByIdAndUpdate(id, updatedData, options);
 
     res.status(200).send(results);
   } catch (error) {
@@ -87,7 +87,7 @@ exports.deleteBlog = async (req, res) => {
   const { id } = req.params;
 
   try {
-    const blog = await blogModel.findByIdAndDelete(id);
+    const blog = await BlogModel.findByIdAndDelete(id);
 
     if (!blog) {
       return res.status(404).send({

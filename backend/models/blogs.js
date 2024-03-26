@@ -23,8 +23,14 @@ const BlogsSchema = new mongoose.Schema(
     },
 
     author: {
-      type: String,
-      required: true,
+      cover: {
+        type: String,
+        required: true,
+      },
+      name: {
+        type: String,
+        required: true,
+      }
     },
 
     content: {
@@ -35,4 +41,6 @@ const BlogsSchema = new mongoose.Schema(
   { timestamps: true, strict: true }
 );
 
-module.exports = mongoose.model("blogModel", BlogsSchema, "blogs");
+
+module.exports = mongoose.model("Blog", BlogsSchema, "blogs");
+

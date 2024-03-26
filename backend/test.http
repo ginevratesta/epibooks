@@ -1,46 +1,14 @@
-GET http://localhost:3030/getAuthors
-
-####
-
-POST http://localhost:3030/createAuthor
+POST http://localhost:3030/postBlog
 Content-Type: application/json
 
 {
-  "name": "Barbara",
-  "surname": "Cicale",
-  "email": "cica@mail",
-  "birthday": "15/9/06",
-  "avatar": "picz.png"
-}
-
-####
-
-GET http://localhost:3030/getAuthor/65f43b932385f5ae469ef3f8
-
-
-####
-
-PATCH http://localhost:3030/updateAuthor/65f43b932385f5ae469ef3f8
-Content-Type: application/json
-
-{
-  "name": "Barbie"
-}
-
-####
-
-DELETE http://localhost:3030/deleteAuthor/65f43b932385f5ae469ef3f8
-
-####
-
-POST http://localhost:3030/createBlog
-Content-Type: application/json
-
-{
-  "category": "Technology",
-  "title": "New Amazing Toaster",
-  "cover": "coolpic.jpeg",
-  "readTime": 7,
-  "author": "Morty Mer",
-  "content": "New hyper smart toaster for you own home"
+    "category": "Technology",
+    "title": "Introduction to Node.js",
+    "cover": "https://example.com/nodejs-cover.jpg",
+    "readTime": 5,
+    "author": {
+        "name": "John Doe",
+        "cover": "https://example.com/author-avatar.jpg"
+    },
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dapibus massa ut tortor pharetra, quis faucibus mi convallis. Fusce vehicula vestibulum justo, ac malesuada felis tincidunt eu. Sed in urna ligula."
 }
