@@ -1,0 +1,8 @@
+.card_body{
+    height: 200px;
+}
+
+.img_{
+    object-fit: cover;
+    height: 100px;
+}
