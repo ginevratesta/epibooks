@@ -12,17 +12,16 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:3030/login", {
-        email,
-        password,
-      });
-      if (response.status === 200) {
-        setError("");
+      const response = await axios.get(`http://localhost:3030/user/${email}`);
+      const user = response.data;
+      if (user && user.password === password) {
         navigate("/home");
+      } else {
+        setError("Invalid email or password");
       }
     } catch (error) {
-      setError("Invalid email or password");
-      console.error("Login error:", error);
+      setError("Error checking user");
+      console.error("Error checking user:", error);
     } finally {
       setEmail("");
       setPassword("");

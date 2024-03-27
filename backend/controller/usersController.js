@@ -19,28 +19,29 @@ exports.postUser = async (req, res) => {
   }
 };
 
+exports.getAllUsers = async (req, res) => {
+  try {
+    const users = await User.find();
+    res.status(200).json(users);
+  } catch (error) {
+    console.error("Error retrieving users:", error);
+    res.status(500).json({ message: "Internal Server Error" });
+  }
+};
+
 
 
 exports.checkUser = async (req, res) => {
-  const { email, password } = req.body;
+  const { email } = req.params;
 
   try {
     const user = await User.findOne({ email });
     if (!user) {
       return res.status(404).json({ message: "User not found" });
     }
-
-    // Compare passwords
-    const isPasswordValid = await user.comparePassword(password);
-    if (!isPasswordValid) {
-      return res.status(401).json({ message: "Invalid password" });
-    }
-
-    // Password is valid, proceed with login
-    // You can generate a token here and send it back in the response if needed
-    res.status(200).json({ message: "Login successful" });
+    res.status(200).json(user);
   } catch (error) {
-    console.error("Error logging in:", error);
+    console.error("Error retrieving user:", error);
     res.status(500).json({ message: "Internal Server Error" });
   }
 };

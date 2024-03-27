@@ -22,3 +22,8 @@ Content-Type: application/json
     "email": "gine@gmail.com",
     "password": "hello234"
 }
+
+
+####
+
+GET http://localhost:3030/users
