@@ -9,11 +9,15 @@ const app = express();
 
 app.use(cors());
 
+const usersRoute = require("./routes/users");
+
 const blogsRoute = require("./routes/blogs");
 
 const cloudRoute = require("./routes/cloudinary");
 
 app.use(express.json());
+
+app.use("", usersRoute);
 
 app.use("", blogsRoute);
 

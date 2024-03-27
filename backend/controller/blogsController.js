@@ -2,7 +2,13 @@ const BlogModel = require("../models/blogs");
 
 exports.getBlogs = async (req, res) => {
   try {
-    const blogs = await BlogModel.find();
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 10;
+
+    const skip = (page - 1) * limit;
+
+    const blogs = await BlogModel.find().skip(skip).limit(limit);
+
     res.status(200).send(blogs);
   } catch (e) {
     res.status(500).send({

@@ -12,3 +12,13 @@ Content-Type: application/json
     },
     "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dapibus massa ut tortor pharetra, quis faucibus mi convallis. Fusce vehicula vestibulum justo, ac malesuada felis tincidunt eu. Sed in urna ligula."
 }
+
+####
+
+POST http://localhost:3030/signup
+Content-Type: application/json
+
+{
+    "email": "gine@gmail.com",
+    "password": "hello234"
+}
