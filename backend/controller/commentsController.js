@@ -92,3 +92,43 @@ exports.postNewComment = async (req, res) => {
     });
   }
 }
+
+
+exports.patchComment = async (req, res) => {
+  const { id, commentId } = req.params;
+
+  try {
+    const blog = await Blog.findById(id);
+
+    if (!blog) {
+      return res.status(404).send({
+        statusCode: 404,
+        message: "Blog not found!",
+      });
+    }
+    const comment = await Comment.findById(commentId);
+
+    if (!comment) {
+      return res.status(404).send({
+        statusCode: 404,
+        message: "Comment not found!",
+      });
+    }
+
+    const updateComment = req.body;
+    const options = { new: true };
+
+    const results = await Comment.findByIdAndUpdate(
+      commentId,
+      updateComment,
+      options
+    );
+
+    res.status(200).send(results);
+  } catch (error) {
+    res.status(500).send({
+      statusCode: 500,
+      message: "Internal Server Error",
+    });
+  }
+};
