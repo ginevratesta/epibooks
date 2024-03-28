@@ -6,6 +6,8 @@ router.get("/getBlogs/:id/comments", commentController.getAllComments);
 
 router.get("/getBlogs/:id/comments/:commentId", commentController.getCommentById);
 
+router.post("/postBlog/:id", commentController.postNewComment);
+
 
 
 

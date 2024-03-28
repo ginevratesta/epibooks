@@ -38,10 +38,10 @@ const BlogsSchema = new mongoose.Schema(
       required: true
     },
 
-    comments:{
+    comments: [{
       type: mongoose.Schema.Types.ObjectId,
       ref: "Comment",
-    }
+    }]
   },
   { timestamps: true, strict: true }
 );

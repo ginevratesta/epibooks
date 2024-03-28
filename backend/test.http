@@ -30,6 +30,17 @@ GET http://localhost:3030/getBlogs/660582f9c84e43ef781e1455/comments/6605809f3ac
 
 ####
 
+POST http://localhost:3030/postBlog/66059fb0dd177d5c206f8c11
+Content-Type: application/json
+
+{
+    "user": "Alex",
+    "comment": "not that good"
+}
+
+
+####
+
 POST http://localhost:3030/signup
 Content-Type: application/json
 
