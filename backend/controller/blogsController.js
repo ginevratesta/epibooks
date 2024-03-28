@@ -8,7 +8,7 @@ exports.getBlogs = async (req, res) => {
 
     const skip = (page - 1) * limit;
 
-    const blogs = await BlogModel.find().skip(skip).limit(limit);
+    const blogs = await BlogModel.find().populate("comments").skip(skip).limit(limit);
 
     res.status(200).send(blogs);
   } catch (e) {

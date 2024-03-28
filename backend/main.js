@@ -17,6 +17,8 @@ const cloudRoute = require("./routes/cloudinary");
 
 const emailsRoute = require("./routes/emails");
 
+const commentsRoute = require("./routes/comments")
+
 
 app.use(express.json());
 
@@ -27,6 +29,8 @@ app.use("", blogsRoute);
 app.use("", cloudRoute);
 
 app.use("", emailsRoute);
+
+app.use("", commentsRoute);
 
 
 mongoose.connect(process.env.MONGODB_URL);

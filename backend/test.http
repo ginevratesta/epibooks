@@ -16,6 +16,20 @@ Content-Type: application/json
 
 ####
 
+GET http://localhost:3030/getBlogs
+
+####
+
+GET http://localhost:3030/getBlogs/660582f9c84e43ef781e1455/comments
+
+
+####
+
+GET http://localhost:3030/getBlogs/660582f9c84e43ef781e1455/comments/6605809f3ac715bcddbde5fd
+
+
+####
+
 POST http://localhost:3030/signup
 Content-Type: application/json
 
