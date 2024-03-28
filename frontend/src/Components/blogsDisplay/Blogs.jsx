@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import "./Blogs.css";
+import Comments from "../comments/Comments";
 
 const Blogs = () => {
   const [blogs, setBlogs] = useState(null);
@@ -49,6 +50,7 @@ const Blogs = () => {
                     {blog.author.name}
                   </Card.Text>
                 </div>
+                <Comments id ={blog._id}/>
               </Card.Body>
             </Card>
           </Col>

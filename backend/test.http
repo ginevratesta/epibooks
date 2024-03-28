@@ -10,7 +10,8 @@ Content-Type: application/json
         "name": "John Doe",
         "cover": "https://example.com/author-avatar.jpg"
     },
-    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dapibus massa ut tortor pharetra, quis faucibus mi convallis. Fusce vehicula vestibulum justo, ac malesuada felis tincidunt eu. Sed in urna ligula."
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dapibus massa ut tortor pharetra, quis faucibus mi convallis. Fusce vehicula vestibulum justo, ac malesuada felis tincidunt eu. Sed in urna ligula.",
+    "comments": "6605809f3ac715bcddbde5fd"
 }
 
 ####
