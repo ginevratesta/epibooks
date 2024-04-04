@@ -1,0 +1,10 @@
+.github{
+    background-color: #010101;
+    color: white;
+    border: 0px;
+    border-radius: 10px;
+}
+
+.github img{
+    width: 20%;
+}

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Container, Form, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import "./Login.css"
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -33,11 +34,11 @@ const Login = () => {
   };
 
   return (
-    <Container className="py-5">
+    <Container className="py-5 text-center">
       <h2>Login</h2>
-      <Form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit} className="d-flex flex-column justify-content-around align-items-center">
         <Form.Group controlId="email">
-          <Form.Label>Email address</Form.Label>
+          <Form.Label className="mt-4">Email address</Form.Label>
           <Form.Control
             type="email"
             placeholder="Enter email"
@@ -46,7 +47,7 @@ const Login = () => {
           />
         </Form.Group>
         <Form.Group controlId="password">
-          <Form.Label>Password</Form.Label>
+          <Form.Label className="mt-4">Password</Form.Label>
           <Form.Control
             type="password"
             placeholder="Password"
@@ -55,12 +56,14 @@ const Login = () => {
           />
         </Form.Group>
         {error && <p className="text-danger">{error}</p>}
-        <Button variant="primary" type="submit">
+        <Button variant="primary" type="submit" className="mt-3">
           Login
         </Button>
+      </Form>
+
         <button
+          className = "github w-25 my-5"
           type="button"
-          className="button-github"
           onClick={handleGitHubLogin}
         >
           <img
@@ -68,9 +71,9 @@ const Login = () => {
             src="https://tse3.mm.bing.net/th?id=OIP.Sfgbqcg35rCru0YB-IQwxgHaD4&pid=Api&P=0&h=180"
             alt="github logo"
           />
-          Git Hub
+          Login with Git Hub
         </button>
-      </Form>
+
     </Container>
   );
 };
