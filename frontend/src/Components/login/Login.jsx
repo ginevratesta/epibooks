@@ -28,6 +28,10 @@ const Login = () => {
     }
   };
 
+  const handleGitHubLogin = () => {
+    window.location.href = `${process.env.REACT_APP_SERVER_BASE_URL}/auth/github`;
+  };
+
   return (
     <Container className="py-5">
       <h2>Login</h2>
@@ -54,6 +58,18 @@ const Login = () => {
         <Button variant="primary" type="submit">
           Login
         </Button>
+        <button
+          type="button"
+          className="button-github"
+          onClick={handleGitHubLogin}
+        >
+          <img
+            id="github-img"
+            src="https://tse3.mm.bing.net/th?id=OIP.Sfgbqcg35rCru0YB-IQwxgHaD4&pid=Api&P=0&h=180"
+            alt="github logo"
+          />
+          Git Hub
+        </button>
       </Form>
     </Container>
   );

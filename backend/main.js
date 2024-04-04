@@ -19,6 +19,8 @@ const emailsRoute = require("./routes/emails");
 
 const commentsRoute = require("./routes/comments")
 
+const githubRoute = require("./routes/github");
+
 
 app.use(express.json());
 
@@ -31,6 +33,8 @@ app.use("", cloudRoute);
 app.use("", emailsRoute);
 
 app.use("", commentsRoute);
+
+app.use("", githubRoute);
 
 
 mongoose.connect(process.env.MONGODB_URL);
