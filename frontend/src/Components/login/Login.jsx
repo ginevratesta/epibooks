@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Container, Form, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import "./Login.css"
+import "./Login.css";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -15,17 +15,20 @@ const Login = () => {
     try {
       const response = await axios.get(`http://localhost:3030/user/${email}`);
       const user = response.data;
-      setPassword(user.password);
-      if (user && user.password === password) {
-        navigate("/home");
-      } else {
-        setError("Invalid email or password");
+      if (!user) {
+        setError("User not found");
+        return;
       }
+      setPassword(user.password);
+      if (password !== user.password) {
+        setError("Invalid password");
+        return;
+      }
+      navigate("/home");
     } catch (error) {
       setError("Error checking user");
       console.error("Error checking user:", error);
     } finally {
-      setEmail("");
       setPassword("");
     }
   };
@@ -37,7 +40,10 @@ const Login = () => {
   return (
     <Container className="py-5 text-center">
       <h2>Login</h2>
-      <Form onSubmit={handleSubmit} className="d-flex flex-column justify-content-around align-items-center">
+      <Form
+        onSubmit={handleSubmit}
+        className="d-flex flex-column justify-content-around align-items-center"
+      >
         <Form.Group controlId="email">
           <Form.Label className="mt-4">Email address</Form.Label>
           <Form.Control
@@ -62,19 +68,18 @@ const Login = () => {
         </Button>
       </Form>
 
-        <button
-          className = "github w-25 my-5"
-          type="button"
-          onClick={handleGitHubLogin}
-        >
-          <img
-            id="github-img"
-            src="https://tse3.mm.bing.net/th?id=OIP.Sfgbqcg35rCru0YB-IQwxgHaD4&pid=Api&P=0&h=180"
-            alt="github logo"
-          />
-          Login with Git Hub
-        </button>
-
+      <button
+        className="github w-25 my-5"
+        type="button"
+        onClick={handleGitHubLogin}
+      >
+        <img
+          id="github-img"
+          src="https://tse3.mm.bing.net/th?id=OIP.Sfgbqcg35rCru0YB-IQwxgHaD4&pid=Api&P=0&h=180"
+          alt="github logo"
+        />
+        Login with GitHub
+      </button>
     </Container>
   );
 };
