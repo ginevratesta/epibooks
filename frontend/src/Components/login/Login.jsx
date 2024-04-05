@@ -15,6 +15,7 @@ const Login = () => {
     try {
       const response = await axios.get(`http://localhost:3030/user/${email}`);
       const user = response.data;
+      setPassword(user.password);
       if (user && user.password === password) {
         navigate("/home");
       } else {
