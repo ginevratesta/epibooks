@@ -37,3 +37,17 @@ Content-type: application/json
     "user": "Val",
     "comment": "Pretty good"
 }
+
+####
+
+POST http://localhost:3030/signup
+Content-Type: application/json
+
+{
+    "email": "ginevra@prova.com",
+    "password": "hello"
+}
+
+####
+
+GET http://localhost:3030/users
