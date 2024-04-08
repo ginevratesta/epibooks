@@ -1,6 +1,5 @@
 .card_body{
     height: 280px;
-    background-color: inherit;
 }
 
 .img_{
@@ -9,6 +8,7 @@
 }
 
 .main-page{
-    background-image: url("../pics/home-blog.jpeg");
+    background-image: url("../pics/bulb.jpeg");
     background-size: cover;
+    background-position: top;
 }
