@@ -8,7 +8,7 @@
     height: 100px;
 }
 
-main{
+.main-page{
     background-image: url("../pics/home-blog.jpeg");
     background-size: cover;
 }

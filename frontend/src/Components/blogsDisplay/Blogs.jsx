@@ -11,7 +11,9 @@ const Blogs = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const res = await axios.get(`http://localhost:3030/getBlogs?page=${page}`);
+        const res = await axios.get(
+          `http://localhost:3030/getBlogs?page=${page}`
+        );
         setBlogs(res.data);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -32,36 +34,40 @@ const Blogs = () => {
   };
 
   return (
-    <main>
-    <Container className="py-5">
-      <Row className="gap-3 justify-content-center">
-        {blogs?.map((blog) => (
-          <Col xs={12} md={6} lg={3} key={blog._id}>
-            <Card>
-              <Card.Img className="img_" variant="top" src={blog.cover} />
-              <Card.Body className="card_body d-flex flex-column justify-content-between">
-                <Card.Title className="text-truncate">{blog.title}</Card.Title>
-                <Card.Text className="text-truncate">
-                  {blog.content}
-                </Card.Text>
-                <p>Read time: {blog.readTime} mins</p>
-                <div className="d-flex justify-content-around">
-                  <Card.Img src={blog.author.cover}/>
-                  <Card.Text>
-                    {blog.author.name}
+    <main className="main-page">
+      <Container className="py-5">
+        <Row className="gap-3 justify-content-center">
+          {blogs?.map((blog) => (
+            <Col xs={12} md={6} lg={3} key={blog._id}>
+              <Card>
+                <Card.Img className="img_" variant="top" src={blog.cover} />
+                <Card.Body className="card_body d-flex flex-column justify-content-between">
+                  <Card.Title className="text-truncate">
+                    {blog.title}
+                  </Card.Title>
+                  <Card.Text className="text-truncate">
+                    {blog.content}
                   </Card.Text>
-                </div>
-                <Comments id ={blog._id}/>
-              </Card.Body>
-            </Card>
-          </Col>
-        ))}
-      </Row>
-      <div className="pagination-buttons d-flex justify-content-between">
-        <Button onClick={handlePrevPage} disabled={page === 1}>Previous Page</Button>
-        <Button onClick={handleNextPage}>Next Page</Button>
-      </div>
-    </Container>
+                  <p>Read time: {blog.readTime} mins</p>
+                  <div className="d-flex justify-content-around">
+                    <Card.Img src={blog.author.cover} />
+                    <Card.Text>{blog.author.name}</Card.Text>
+                  </div>
+                  <Comments id={blog._id} />
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
+        </Row>
+        <div className="pagination-buttons d-flex justify-content-between">
+          <Button onClick={handlePrevPage} disabled={page === 1}>
+            Previous Page
+          </Button>
+          <Button onClick={handleNextPage} disabled={page === 10}>
+            Next Page
+          </Button>
+        </div>
+      </Container>
     </main>
   );
 };
