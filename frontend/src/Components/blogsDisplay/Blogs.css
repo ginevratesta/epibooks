@@ -1,8 +1,14 @@
 .card_body{
     height: 280px;
+    background-color: inherit;
 }
 
 .img_{
     object-fit: cover;
     height: 100px;
+}
+
+main{
+    background-image: url("../pics/home-blog.jpeg");
+    background-size: cover;
 }

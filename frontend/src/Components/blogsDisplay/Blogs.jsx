@@ -32,6 +32,7 @@ const Blogs = () => {
   };
 
   return (
+    <main>
     <Container className="py-5">
       <Row className="gap-3 justify-content-center">
         {blogs?.map((blog) => (
@@ -61,6 +62,7 @@ const Blogs = () => {
         <Button onClick={handleNextPage}>Next Page</Button>
       </div>
     </Container>
+    </main>
   );
 };
 

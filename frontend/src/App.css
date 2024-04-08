@@ -6,5 +6,15 @@
     --bs-btn-hover-color: white;
     --bs-btn-hover-bg: #258e94;
     --bs-btn-hover-border-color: #258e94;
+    --bs-btn-disabled-color: #636af1;
+    --bs-btn-disabled-bg: #d9f3f4;
+    --bs-btn-disabled-border-color: #d9f3f4;
+  }
+
+  .card{
+    --bs-card-bg: inherit;
+    --bs-card-border-color:#258e94;
+    --bs-card-color: #258e94;
   }
 }
+

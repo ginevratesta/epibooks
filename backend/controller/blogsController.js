@@ -20,7 +20,6 @@ exports.getBlogs = async (req, res) => {
 };
 
 exports.postBlog = async (req, res) => {
-  const comment = await Comment.findOne({_id: req.body.comments})
   const newBlog = new BlogModel({
     category: req.body.category,
     title: req.body.title,
@@ -28,7 +27,6 @@ exports.postBlog = async (req, res) => {
     readTime: req.body.readTime,
     author: req.body.author,
     content: req.body.content,
-    comments: comment._id
   });
 
   try {
