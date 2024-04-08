@@ -2,13 +2,13 @@ const express = require("express");
 const router = express.Router();
 const commentController = require("../controller/commentsController");
 
-router.get("/getBlogs/:id/comments", commentController.getAllComments);
+router.get("/getComments/:id/comments", commentController.getAllComments);
 
-router.get("/getBlogs/:id/comments/:commentId", commentController.getCommentById);
+router.get("/getComments/:id/comments/:commentId", commentController.getCommentById);
 
-router.post("/postBlog/:id", commentController.postNewComment);
+router.post("/postComment/:id", commentController.postNewComment);
 
-router.patch("/updateBlog/:id/comments/:commentId", commentController.patchComment);
+router.patch("/updateComment/:id/comments/:commentId", commentController.patchComment);
 
 
 

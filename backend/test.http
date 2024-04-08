@@ -15,42 +15,27 @@ Content-Type: application/json
 
 ####
 
-GET http://localhost:3030/getBlogs
-
-####
-
-GET http://localhost:3030/getBlogs/660582f9c84e43ef781e1455/comments
-
-
-####
-
-GET http://localhost:3030/getBlogs/660582f9c84e43ef781e1455/comments/6605809f3ac715bcddbde5fd
-
-
-####
-
-PATCH http://localhost:3030/updateBlog/66059fb0dd177d5c206f8c11/comments/66059ff2dd177d5c206f8c14
-Content-type: application/json
-
-{
-    "user": "Val",
-    "comment": "Pretty good"
-}
-
-####
-
-POST http://localhost:3030/signup
+POST http://localhost:3030/postComment/6613f8fc3ac715bcddbde65b
 Content-Type: application/json
 
 {
-    "email": "ginevra@prova.com",
-    "password": "hello"
+    "user": "clara",
+    "comment": "nice article"
 }
 
 ####
 
-GET http://localhost:3030/users
+GET http://localhost:3030/getComments/6613f8fc3ac715bcddbde65b/comments
 
 ####
 
-GET http://localhost:3030/user/ginevra@prova.com
+GET http://localhost:3030/getComments/6613f8fc3ac715bcddbde65b/comments/66140fb6a4b957840fe2c930
+
+####
+
+PATCH http://localhost:3030/updateComment/6613f8fc3ac715bcddbde65b/comments/6613fb70dfc56541c446513d
+Content-Type: application/json
+
+{
+    "user": "Danny boy"
+}
