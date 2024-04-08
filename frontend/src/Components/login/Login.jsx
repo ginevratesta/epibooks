@@ -52,6 +52,7 @@ const Login = () => {
     } finally {
       setEmail("");
       setPassword("");
+      alert("User created correctly!")
       navigate("/home");
     }
   };
@@ -62,17 +63,21 @@ const Login = () => {
 
   const handleSignUp = () => {
     setIsRegistered(false);
+    if(!isRegistered){
+      setIsRegistered(true)
+    }
   };
 
   useEffect(() => {}, [isRegistered, email, password]);
 
   return (
-    <Container className="py-5 text-center">
-      <h2>{isRegistered ? "Login" : "Sign up"}</h2>
+    <main>
+    <Container className="py-5 text-center d-flex justify-content-center text-white">
       <Form
         onSubmit={isRegistered ? handleSubmit : handleRegister}
-        className="d-flex flex-column justify-content-around align-items-center"
-      >
+        className="login py-4 d-flex flex-column justify-content-around align-items-center w-50"
+        >
+        <h2>{isRegistered ? "Login" : "Sign up"}</h2>
         <Form.Group controlId="email">
           <Form.Label className="mt-4">Email address</Form.Label>
           <Form.Control
@@ -96,7 +101,7 @@ const Login = () => {
          {isRegistered ? "Login" : "Sign up"}
         </Button>
         <button
-          className="github w-25 my-5"
+          className="github w-50 my-5"
           type="button"
           onClick={handleGitHubLogin}
         >
@@ -108,9 +113,10 @@ const Login = () => {
           Login with GitHub
         </button>
 
-        <p onClick={handleSignUp} style={{ cursor: "pointer" }}>Not a member yet? Sign up!</p>
+        <p onClick={handleSignUp} className="member">{isRegistered ? "Not a member yet? Sign up!" : "Already a member? Login!"}</p>
       </Form>
     </Container>
+    </main>
   );
 };
 

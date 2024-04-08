@@ -1,10 +1,24 @@
-.github{
-    background-color: #010101;
-    color: white;
-    border: 0px;
-    border-radius: 10px;
+.login {
+  background-color: inherit;
 }
 
-.github img{
-    width: 20%;
+.github {
+  background-color: #010101;
+  color: white;
+  border: 0px;
+  border-radius: 10px;
+}
+
+.github img {
+  width: 20%;
+}
+
+main{
+  background-image: url("../pics/blog.jpeg");
+  background-size: cover;
+}
+
+.member{
+  cursor: pointer;
+  color: #010101;
 }

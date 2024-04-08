@@ -1,0 +1,10 @@
+:root {
+  .btn-primary {
+    --bs-btn-bg: #d9f3f4;
+    --bs-btn-color: #636af1;
+    --bs-btn-border-color: #d9f3f4;
+    --bs-btn-hover-color: white;
+    --bs-btn-hover-bg: #258e94;
+    --bs-btn-hover-border-color: #258e94;
+  }
+}
